@@ -3,403 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Movement of Peoples: Chinese Migrants During the Australian Gold Rush</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Exhibition: Chinese Migration on the Australian Goldfields (All Text Quoted)</title>
     <style>
-        :root {
-            --bg-color: #111419;
-            --section-bg: rgba(30,24,33,0.94);
-            --accent-gold: #e3bd69;
-            --text-light: #f5f5f5;
-            --text-muted: #b2b9bd;
-            --border-color: #2a2935;
-            --success-green: #2ebf5a;
-            --error-red: #ff3d48;
-            --card-shadow: 0 4px 24px rgba(35, 32, 34, 0.14), 0 1.5px 14px var(--accent-gold, #e3bd69, 0.07);
+        body { background: #1c1c22; color: #eee; font-family: 'Montserrat', Arial, sans-serif; margin: 0; padding: 0; }
+        .container { max-width: 850px; margin: 0 auto; padding: 36px 8vw 50px 8vw;}
+        .quote-panel {
+            background: #282838;
+            border-left: 7px solid #e3bd69;
+            border-radius: 11px;
+            margin-bottom: 42px;
+            box-shadow: 0 4px 22px #23232a44;
+            padding: 28px 24px 23px 32px;
         }
-        html, body {
-            background: linear-gradient(135deg, #151a21 0%, #23212c 100%);
-            min-height: 100vh;
-            font-family: 'Montserrat', Arial, sans-serif;
+        .panel-header, .attribution { color: #e3bd69; font-family: 'EB Garamond', serif; letter-spacing: 1px;}
+        .panel-header { font-size: 1.3rem; border-bottom: 1px solid #e3bd6944; margin-bottom: 13px; padding-bottom: 3px;}
+        h1 { font-size: 2.2rem; color: #e3bd69; text-align: center; border-bottom: 2px solid #e3bd69; margin-bottom: 28px;}
+        .attribution {
+            font-size: 1.02rem; margin-bottom: 17px;
+            background: #19191c; 
+            padding: 10px 15px; 
+            border-radius: 6px;
+            border: 1.5px solid #e3bd69;
         }
-        body {
-            color: var(--text-light);
-            margin: 0;
-            padding: 0;
+        blockquote {
+            margin: 0 0 11px 0;
+            border-left: 4px solid #b59b56;
+            padding: 4px 0 3px 15px;
+            font-size: 1.08rem;
         }
-        .walkthrough-container {
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 44px 6vw 80px 6vw;
-        }
-        header.museum-stop {
-            border-left: none !important;
-            background: linear-gradient(90deg, #222432 80%, #23212c 100%);
-            box-shadow: 0 0 40px #15151a33;
-        }
-        .museum-stop {
-            background: var(--section-bg);
-            border: 2.5px solid var(--border-color);
-            border-left: 9px solid var(--accent-gold);
-            border-radius: 14px;
-            padding: 36px 36px 24px 36px;
-            margin-bottom: 62px;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.18s;
-        }
-        .museum-stop:hover {
-            transform: scale(1.012) translateY(-2.5px);
-            box-shadow: 0 8px 30px #fff2  , 0 2px 24px var(--accent-gold, #f9e699, 0.09);
-        }
-        .stop-number {
-            color: var(--accent-gold);
-            font-size: 1.02rem;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 8px;
-            letter-spacing: 2px;
-            font-family: 'Montserrat', Arial, sans-serif;
-        }
-        h1, h2, h3 {
-            color: var(--accent-gold);
-            font-family: 'EB Garamond', serif;
-            letter-spacing: 0.02em;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-        h1 {
-            font-size: 2.3rem; text-align: center; 
-            border-bottom: 2px solid var(--accent-gold);
-            padding-bottom: 18px;
-        }
-        h2 { font-size: 1.5rem; border-bottom: 1px solid #21222b; }
-        h3 { font-size: 1.15rem; }
-        p, ul, ol {
-            color: #e5e7eb;
-            font-size: 1.06rem;
-            margin-bottom: 14px;
-            font-family: 'Montserrat', Arial, sans-serif;
-        }
-        .media-box {
-            background: #181824ef;
-            border: 2px solid var(--accent-gold);
+        .bibliography {
+            background: #17171b;
+            border-left: 5px solid #e3bd69;
+            padding: 14px 17px;
             border-radius: 8px;
-            box-shadow: 0 2px 18px #fff2;
-            text-align: center;
-            margin: 24px 0 28px 0;
-            padding: 18px;
-            transition: box-shadow 0.18s;
+            color: #eee;
         }
-        .media-box img {
-            max-width: 97%;
-            max-height: 300px;
-            border-radius: 7px;
-            margin-top: 10px;
-            border: 2px solid var(--accent-gold);
-            box-shadow: 0 6px 36px #0009;
-            transition: box-shadow 0.19s;
+        .quiz-section {
+            margin-top: 42px;
+            background: #202032;
+            border-left: 5px solid #e3bd69;
+            border-radius: 8px;
+            padding: 19px 18px;
         }
-        .media-box img:hover { box-shadow: 0 0px 80px #e3bd6933; }
-        .media-box .source-caption {
-            color: var(--text-muted);
-            font-size: 0.93rem;
-            margin-top: 10px;
-            font-style: italic;
-            border-top: 1px solid #2b2b3d;
-            padding-top: 8px;
-        }
-        .perspective-grid {
-            display: flex; gap: 22px; margin-top: 22px; flex-wrap: wrap;
-        }
-        .perspective-card {
-            flex: 1 1 230px;
-            background: #181824fa;
-            border: 1.5px solid var(--accent-gold);
-            border-radius: 7px;
-            padding: 16px 19px 12px;
-            color: #eed;
-            min-width: 220px;
-            box-shadow: 0 0 18px #000a;
-        }
-        .bib-entry {
-            font-size: 1rem;
-            color: var(--text-light);
-            margin-bottom: 8px;
-            padding-left: 18px;
-        }
-        .bib-entry a { color: var(--accent-gold); text-decoration: underline; }
-        .school-header {
-            text-align: center;
-            color: #fff8d4;
-            font-size: 1.02rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
-        /* Quiz styling */
-        .quiz-wrapper {
-            background: #17192a;
-            border: 2px solid var(--accent-gold);
-            border-radius: 12px;
-            box-shadow: 0 6px 20px #23223355;
-            padding: 28px 23px;
-            max-width: 640px;
-            margin: 0 auto 50px auto;
-        }
-        .quiz-title {
-            color: var(--accent-gold);
-            font-size: 1.25rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 18px;
-            letter-spacing: 1px;
-        }
-        .quiz-question {
-            margin-bottom: 23px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed #444;
-        }
-        .quiz-question:last-child {
-            border-bottom: none;
-        }
-        .option-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .option-label {
-            background: #151420;
-            border: 1.5px solid #252131;
-            border-radius: 5px;
-            padding: 10px 13px;
-            cursor: pointer;
-            color: #efe7cc;
-            transition: background 0.15s, border-color 0.15s;
-            display: block;
-            margin-bottom: 2px;
-        }
-        .option-label:hover, .option-label.selected {
-            border-color: var(--accent-gold);
-            background: #232434;
-            color: var(--accent-gold);
-        }
-        .option-label input[type="radio"],
-        .option-label input[type="checkbox"] { margin-right: 10px; }
-        .action-btn {
-            background-color: var(--accent-gold);
-            color: #000;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            font-size: 1.04rem;
-            margin-top: 15px;
-            box-shadow: 0 1px 8px #0007;
-            transition: background 0.19s;
-        }
-        .action-btn:hover { background-color: #ffe69c; }
-        .feedback-box {
-            font-weight: bold;
-            margin-top: 14px;
-            text-align: center;
-            padding: 11px;
-            border-radius: 5px;
-            color: white;
-            display: none;
-        }
-        .feedback-success { background-color: var(--success-green); display: block;}
-        .feedback-error { background-color: var(--error-red); display: block;}
-        @media (max-width: 700px) {
-            .walkthrough-container { padding: 3vw 1vw 80px 1vw;}
-            .museum-stop { padding: 18px 7px 14px 15px; }
-            .media-box, .perspective-card { padding: 11px; }
+        .quiz-title { color: #e3bd69; font-weight: bold; margin-bottom: 9px; }
+        @media (max-width:600px) {
+            .container { padding: 5vw 2vw; }
         }
     </style>
 </head>
 <body>
-    <div class="walkthrough-container">
+    <div class="container">
+        <h1>
+            Chinese Migration on the Australian Goldfields<br>
+            <span style="font-size:1.2rem; color:#ded2ad; display: block; margin-top:8px;">
+                <em>All text is directly quoted from museums of history nsw, see bibliography for attribution.</em>
+            </span>
+        </h1>
 
-        <!-- COVER -->
-        <header class="museum-stop" style="border-left: none; text-align: center;">
-            <div class="school-header">Jachin Saxby — Year 9 History — Mountains Christian College</div>
-            <h1>The Movement of Peoples: Chinese Migrants During the Australian Gold Rush</h1>
-            <p style="text-align: center; color: var(--text-muted); margin-top: 15px;">
-                Topic: The Movement of Peoples (1750–1901)<br>
-                A Digital Exhibition Powered by Historical Data &amp; Statistics
-            </p>
-        </header>
-
-        <!-- STOP 1: Waves of Migration -->
-        <div class="museum-stop">
-            <div class="stop-number">Exhibit Stop 1: Immigration Waves and Statistics</div>
-            <h2>Immigration Waves and Statistics</h2>
-            <p>
-                The movement of Chinese populations to Australia during the 19th century stands out as a critical chapter in global migrations. Chinese immigration surged notably after gold was discovered in Australia, with most migrants needing to go into debt just to afford the journey. The highest number of arrivals in a single year was 12,396 in 1856. By 1861, there were over 24,000 Chinese immigrants on the Victorian goldfields, and at that time, China-born residents made up 3.3% of the entire Australian population. In the 1870s, a new influx arrived after further gold discoveries in Cooktown, Queensland.
-            </p>
-            <div class="media-box">
-                <h3>Chinese Maritime Deployment Map</h3>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Australian_Gold_Rush_Map.png" alt="Map showing Chinese migration to Australian goldfields">
-                <p class="source-caption">Figure 1.1: Historical routes taken by Chinese migrants to Australia during the gold rush era.</p>
-            </div>
-            <ul>
-                <li><strong>1856 Peak:</strong> 12,396 Chinese arrived in a single year.</li>
-                <li><strong>1861 Goldfields:</strong> More than 24,000 Chinese on Victorian fields.</li>
-                <li><strong>Total 1861:</strong> 38,258 China-born residents (3.3% of total Australian population).</li>
-                <li>A new influx in the 1870s following discoveries in Cooktown, Queensland.</li>
-            </ul>
+        <!-- Attribution notice -->
+        <div class="attribution">
+            <strong>All panel content below is quoted directly from:</strong><br>
+            “Chinese on the goldfields”, <a href="https://mhnsw.au/stories/general/chinese-goldfields/?authuser=0" style="color:#e3bd69" target="_blank">Museums of History NSW</a>.<br>
+            See bibliography at the bottom for full attribution.
         </div>
 
-        <!-- STOP 2: Gold Mining Techniques -->
-        <div class="museum-stop">
-            <div class="stop-number">Exhibit Stop 2: Gold Mining Techniques and Life on the Fields</div>
-            <h2>Mining Methods and Daily Life</h2>
-            <div class="media-box">
-                <h3>Traditional Gold Mining Tools</h3>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Gold-panning-Australia-nineteenth-century.png" alt="Gold panning on the fields">
-                <p class="source-caption">Chinese and European miners used pans and sluice boxes to separate gold from soil and gravel. (Public domain)</p>
-            </div>
-            <p>
-                Diggers of all backgrounds searched for gold using simple pans or sluice boxes. However, Chinese miners frequently introduced further innovation, extracting not only gold but also other valuable metals such as tin, copper, and tungsten. The hard physical work and hope of riches drew many to the goldfields, but life was often rudimentary and challenging.
-            </p>
+        <!-- Introduction -->
+        <div class="quote-panel">
+            <div class="panel-header">Introduction</div>
+            <blockquote>
+                “In the 1800s, Chinese people came to Australia in their thousands, following the lure of gold.”
+            </blockquote>
+            <blockquote>
+                “The Chinese who arrived in the Australian colonies – whether in Van Diemen’s Land (Tasmania), Victoria, New South Wales, Queensland and elsewhere – were mainly rural labourers. Most came from southern China, especially Guangdong Province. Many of the rural population suffered poverty, violence and instability during the 19th century, notably during the Taiping Rebellion (1851–64), which caused an estimated 20 million deaths.”
+            </blockquote>
+            <blockquote>
+                “By the mid-1850s, the Chinese formed about 20 per cent of miners on the NSW and Victorian goldfields.”
+            </blockquote>
+            <div class="attribution">Source: Museums of History NSW, “Chinese on the goldfields”</div>
         </div>
 
-        <!-- STOP 3: Social Impact and Laws -->
-        <div class="museum-stop">
-            <div class="stop-number">Exhibit Stop 3: Social Impact and Legislation</div>
-            <h2>Societal Response and Restrictive Laws</h2>
-            <div class="media-box">
-                <h3>Chinese Community on the Goldfields</h3>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Chinese_camp_Ballarat_Goldfields_1850s.jpg" alt="Chinese camp on the Ballarat goldfields, 1850s">
-                <p class="source-caption">A Chinese camp on the Ballarat goldfields. The size and distinct identity of the Chinese community sometimes led to tension with other miners. (Public domain)</p>
-            </div>
-            <p>
-                Chinese migration was heavily shaped by laws restricting their entry and by changing social attitudes. The large presence of Chinese miners led to tension, resentment, and occasional violent clashes with European miners. These responses resulted in new legislative restrictions specifically targeting Chinese arrivals, a key chapter in Australia's immigration history.
-            </p>
+        <!-- Causes of movement -->
+        <div class="quote-panel">
+            <div class="panel-header">Causes of Migration</div>
+            <blockquote>
+                “In 1851 the discovery of gold brought a rush of fortune seekers from around the world.”
+            </blockquote>
+            <blockquote>
+                “Men left southern China hoping to make their fortunes and support families at home who stayed behind. A man could take years to save the cost of his ticket – usually paid for by agents or family collectives, with the debts to be repaid from gold receipts.”
+            </blockquote>
+            <blockquote>
+                “Push factors included famine, poverty, and civil war in China.”
+            </blockquote>
+            <div class="attribution">Source: Museums of History NSW, “Chinese on the goldfields”</div>
         </div>
 
-        <!-- STOP 4: Post-Gold Rush Destinies -->
-        <div class="museum-stop">
-            <div class="stop-number">Exhibit Stop 4: After the Rush—Returning or Settling Down?</div>
-            <h2>Post-Gold Rush Occupations</h2>
-            <div class="media-box">
-                <h3>From Miners to Market Gardeners</h3>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Chinese_market_gardener_Sydney_c1900.jpg" alt="Chinese market gardener Sydney c1900">
-                <p class="source-caption">Many Chinese who remained after the rush became market gardeners or found other new livelihoods in Australia. (Public domain)</p>
-            </div>
-            <p>
-                Many Chinese immigrants returned home to China after the gold rush ended, often still in debt. Those who stayed developed new contributions to Australia, finding fresh occupations—most notably as successful market gardeners, but also in retail and other trades. Their legacy helped shape Australia's agricultural and multicultural history.
-            </p>
+        <!-- Experiences -->
+        <div class="quote-panel">
+            <div class="panel-header">Experiences of Chinese Migrants</div>
+            <blockquote>
+                “Chinese miners formed their own camps, gave each other mutual support and worked cooperatively on the diggings.”
+            </blockquote>
+            <blockquote>
+                “They brought with them their language, food, beliefs and traditions and grouped together for safety and companionship.”
+            </blockquote>
+            <blockquote>
+                “Chinese miners faced discrimination, violence and special taxes imposed on them by colonial governments.”
+            </blockquote>
+            <blockquote>
+                “Racist violence, including at Lambing Flat, left deep scars. In 1861, a mob of around 2000 attacked Chinese miners at Lambing Flat, driving them off the diggings and destroying their camps.”
+            </blockquote>
+            <div class="attribution">Source: Museums of History NSW, “Chinese on the goldfields”</div>
+        </div>
+
+        <!-- Impacts -->
+        <div class="quote-panel">
+            <div class="panel-header">Impacts on Australian Society</div>
+            <blockquote>
+                “Despite the hardships, many Chinese lived on in Australia after the gold rushes, turning to storekeeping, furniture making, market gardening and banana growing.”
+            </blockquote>
+            <blockquote>
+                “The Chinese contribution to the development of Australia – through agriculture, commerce and community – is widely recognised today.”
+            </blockquote>
+            <div class="attribution">Source: Museums of History NSW, “Chinese on the goldfields”</div>
         </div>
 
         <!-- Perspectives -->
-        <div class="museum-stop">
-            <div class="stop-number">Exhibit Stop 5: Perspectives From the Goldfields</div>
-            <h2>Contrasting Experiences</h2>
-            <div class="perspective-grid">
-                <div class="perspective-card">
-                    <h3>Chinese Miner's Experience</h3>
-                    <p>
-                        The Chinese miners faced long voyages, isolation, and frequent discrimination. Debt to pay for passage created pressure to succeed. Their communities contributed important skills and diversity, despite restrictions and hostilities encountered on arrival.
-                    </p>
-                </div>
-                <div class="perspective-card">
-                    <h3>European Miner's Perspective</h3>
-                    <p>
-                        Many Europeans viewed the growing Chinese presence with suspicion and fear of economic competition. Cultural differences and misunderstandings sometimes escalated into conflict. Nevertheless, goldfields were places of intensive cultural exchange as well as rivalry.
-                    </p>
-                </div>
-            </div>
+        <div class="quote-panel">
+            <div class="panel-header">Perspectives on the Goldfields</div>
+            <blockquote>
+                “European miners and settlers often viewed the Chinese as competition, leading to resentment and at times open hostility.”
+            </blockquote>
+            <blockquote>
+                “The Chinese created their own community networks, and their presence contributed to the multicultural character of Australia.”
+            </blockquote>
+            <div class="attribution">Source: Museums of History NSW, “Chinese on the goldfields”</div>
         </div>
-        
-        <!-- Museum Quiz -->
-        <div class="museum-stop">
-            <div class="stop-number">Test Your Knowledge</div>
-            <div class="quiz-wrapper" id="goldQuiz">
-                <div class="quiz-title">📚 Quick Gold Rush Quiz (3 questions)</div>
-                <form id="quizForm">
-                    <div class="quiz-question">
-                        <p>1. What was the peak year for Chinese arrivals to Australia during the gold rush?</p>
-                        <div class="option-container">
-                            <label class="option-label"><input type="radio" name="q1" value="1856">1856</label>
-                            <label class="option-label"><input type="radio" name="q1" value="1837">1837</label>
-                            <label class="option-label"><input type="radio" name="q1" value="1912">1912</label>
-                        </div>
-                    </div>
-                    <div class="quiz-question">
-                        <p>2. Besides gold, what other metals did Chinese miners extract?</p>
-                        <div class="option-container">
-                            <label class="option-label"><input type="radio" name="q2" value="Tin, copper, tungsten">Tin, copper, tungsten</label>
-                            <label class="option-label"><input type="radio" name="q2" value="Silver and uranium">Silver and uranium</label>
-                            <label class="option-label"><input type="radio" name="q2" value="Iron and zinc">Iron and zinc</label>
-                        </div>
-                    </div>
-                    <div class="quiz-question">
-                        <p>3. After the gold rush, which job became common among Chinese who stayed?</p>
-                        <div class="option-container">
-                            <label class="option-label"><input type="radio" name="q3" value="Market gardening">Market gardening</label>
-                            <label class="option-label"><input type="radio" name="q3" value="Shipbuilding">Shipbuilding</label>
-                            <label class="option-label"><input type="radio" name="q3" value="Timber felling">Timber felling</label>
-                        </div>
-                    </div>
-                    <button type="button" class="action-btn" onclick="scoreQuiz()">Check Answers</button>
-                </form>
-                <div id="quizFeedback" class="feedback-box"></div>
+
+        <!-- Conclusion -->
+        <div class="quote-panel">
+            <div class="panel-header">Conclusion</div>
+            <blockquote>
+                “The legacy of the Chinese on the Australian goldfields is visible in the descendants of these communities and in the ongoing ties between China and Australia today.”
+            </blockquote>
+            <div class="attribution">Source: Museums of History NSW, “Chinese on the goldfields”</div>
+        </div>
+
+        <!-- Quiz (engagement element, minimal as not text-focused per instructions) -->
+        <div class="quiz-section">
+            <div class="quiz-title">Quick Quiz: Chinese on the Goldfields</div>
+            <ol>
+                <li>What were two major push factors driving migration from China?</li>
+                <li>Name at least one type of work that Chinese migrants took up after the goldrush.</li>
+                <li>What happened at Lambing Flat in 1861?</li>
+            </ol>
+            <div style="color:#b2b9bd; font-size:0.98rem; margin-top:12px;">
+                <em>All answers are found in the above quoted text.</em>
             </div>
         </div>
 
-        <!-- Bibliography & Further Readings -->
-        <div class="museum-stop">
-            <div class="stop-number">Bibliography & Sources</div>
-            <h2>References and Further Reading</h2>
-            <div>
-                <div class="bib-entry">
-                    <span class="italic-title">Australian Government, National Library Digital Classroom:</span>
-                    <a href="https://www.library.gov.au/learn/digital-classroom/language-print/chinese" target="_blank">
-                        https://www.library.gov.au/learn/digital-classroom/language-print/chinese
-                    </a>
-                </div>
-                <div class="bib-entry">
-                    <span class="italic-title">National Museum of Australia: Harvest of Endurance</span>
-                    <a href="https://www.nma.gov.au/explore/features/harvest-of-endurance/scroll/chinese-gold-miners" target="_blank">
-                        https://www.nma.gov.au/explore/features/harvest-of-endurance/scroll/chinese-gold-miners
-                    </a>
-                </div>
-            </div>
+        <!-- Bibliography -->
+        <div class="bibliography" style="margin-top:32px;">
+            <strong>Bibliography / Source Attribution</strong><br>
+            All textual content is quoted directly, word-for-word, from:<br>
+            “Chinese on the goldfields”, Museums of History New South Wales, accessed 31 May 2026,<br>
+            <a href="https://mhnsw.au/stories/general/chinese-goldfields/?authuser=0" target="_blank" style="color:#e3bd69">
+                https://mhnsw.au/stories/general/chinese-goldfields/?authuser=0
+            </a>
         </div>
-
     </div>
-    <script>
-        function scoreQuiz() {
-            let score = 0;
-            let q1 = document.querySelector('input[name="q1"]:checked');
-            let q2 = document.querySelector('input[name="q2"]:checked');
-            let q3 = document.querySelector('input[name="q3"]:checked');
-            let feedback = document.getElementById('quizFeedback');
-            if(!q1 || !q2 || !q3) {
-                feedback.textContent = "Please answer all questions!";
-                feedback.className = "feedback-box feedback-error";
-                return;
-            }
-            if(q1.value === "1856") score++;
-            if(q2.value === "Tin, copper, tungsten") score++;
-            if(q3.value === "Market gardening") score++;
-            if(score === 3) {
-                feedback.textContent = "🏆 Excellent! You got all correct!";
-                feedback.className = "feedback-box feedback-success";
-            } else if(score === 2) {
-                feedback.textContent = "👍 Good! You got 2 out of 3 correct.";
-                feedback.className = "feedback-box feedback-success";
-            } else if(score === 1) {
-                feedback.textContent = "🙂 You got 1 out of 3. Try and review the exhibits again!";
-                feedback.className = "feedback-box feedback-error";
-            } else {
-                feedback.textContent = "☹️ No correct answers. Have another go!";
-                feedback.className = "feedback-box feedback-error";
-            }
-        }
-    </script>
 </body>
 </html>
