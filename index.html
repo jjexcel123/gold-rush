@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exhibition: Chinese Migration on the Australian Goldfields (All Text Quoted)</title>
+    <title>Exhibition: Chinese Migration on the Australian Goldfields</title>
     <style>
         body { background: #1c1c22; color: #eee; font-family: 'Montserrat', Arial, sans-serif; margin: 0; padding: 0; }
         .container { max-width: 850px; margin: 0 auto; padding: 36px 8vw 50px 8vw;}
@@ -56,7 +56,7 @@
         <h1>
             Chinese Migration on the Australian Goldfields<br>
             <span style="font-size:1.2rem; color:#ded2ad; display: block; margin-top:8px;">
-                <em>All text is directly quoted from museums of history nsw, see bibliography for attribution.</em>
+                <em>All text is directly quoted from Museums of History NSW, see bibliography for attribution.</em>
             </span>
         </h1>
 
@@ -64,7 +64,6 @@
         <div class="attribution">
             <strong>All panel content below is quoted directly from:</strong><br>
             “Chinese on the goldfields”, <a href="https://mhnsw.au/stories/general/chinese-goldfields/?authuser=0" style="color:#e3bd69" target="_blank">Museums of History NSW</a>.<br>
-            See bibliography at the bottom for full attribution.
         </div>
 
         <!-- Introduction -->
@@ -150,16 +149,75 @@
 
         <!-- Quiz (engagement element, minimal as not text-focused per instructions) -->
         <div class="quiz-section">
-            <div class="quiz-title">Quick Quiz: Chinese on the Goldfields</div>
-            <ol>
-                <li>What were two major push factors driving migration from China?</li>
-                <li>Name at least one type of work that Chinese migrants took up after the goldrush.</li>
-                <li>What happened at Lambing Flat in 1861?</li>
-            </ol>
-            <div style="color:#b2b9bd; font-size:0.98rem; margin-top:12px;">
-                <em>All answers are found in the above quoted text.</em>
+    <div class="quiz-title">Quick Quiz: Chinese on the Goldfields</div>
+    <form id="goldQuizForm">
+        <div class="quiz-question">
+            <p>1. What were two major push factors driving migration from China?</p>
+            <div class="option-container">
+                <label class="option-label"><input type="checkbox" name="q1" value="famine">Famine</label>
+                <label class="option-label"><input type="checkbox" name="q1" value="poverty">Poverty</label>
+                <label class="option-label"><input type="checkbox" name="q1" value="gold">Gold discoveries in Australia</label>
+                <label class="option-label"><input type="checkbox" name="q1" value="peace">Peaceful conditions in China</label>
             </div>
         </div>
+        <div class="quiz-question">
+            <p>2. Name one type of work that Chinese migrants took up after the goldrush.</p>
+            <div class="option-container">
+                <label class="option-label"><input type="radio" name="q2" value="market gardening">Market gardening</label>
+                <label class="option-label"><input type="radio" name="q2" value="shipbuilding">Shipbuilding</label>
+                <label class="option-label"><input type="radio" name="q2" value="railway construction">Railway construction</label>
+            </div>
+        </div>
+        <div class="quiz-question">
+            <p>3. What happened at Lambing Flat in 1861?</p>
+            <div class="option-container">
+                <label class="option-label"><input type="radio" name="q3" value="riot">Racist violence against Chinese miners</label>
+                <label class="option-label"><input type="radio" name="q3" value="discovery">Major gold discovery</label>
+                <label class="option-label"><input type="radio" name="q3" value="law">Anti-discrimination law passed</label>
+            </div>
+        </div>
+        <button type="button" class="action-btn" onclick="scoreGoldQuiz()">Check Answers</button>
+    </form>
+    <div id="goldQuizFeedback" class="feedback-box"></div>
+</div>
+
+<script>
+function scoreGoldQuiz() {
+    let score = 0;
+    // Question 1: famine, poverty checked (multiple)
+    const q1Checked = Array.from(document.querySelectorAll('input[name="q1"]:checked')).map(i=>i.value);
+    // Correct: famine & poverty ONLY
+    if (q1Checked.includes('famine') && q1Checked.includes('poverty') && q1Checked.length === 2) score++;
+    // Question 2: Only "market gardening"
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    if (q2 && q2.value === "market gardening") score++;
+    // Question 3: Only "riot"
+    const q3 = document.querySelector('input[name="q3"]:checked');
+    if (q3 && q3.value === "riot") score++;
+
+    let feedback = document.getElementById('goldQuizFeedback');
+    if (!q2 || !q3 || q1Checked.length === 0) {
+        feedback.textContent = "Please answer all questions!";
+        feedback.className = "feedback-box feedback-error";
+        return;
+    }
+    if (score === 3) {
+        feedback.textContent = "🏆 Excellent! You got all correct!";
+        feedback.className = "feedback-box feedback-success";
+    } else if (score === 2) {
+        feedback.textContent = "👍 Good! You got 2 out of 3 correct.";
+        feedback.className = "feedback-box feedback-success";
+    } else if (score === 1) {
+        feedback.textContent = "🙂 You got 1 out of 3. Try again!";
+        feedback.className = "feedback-box feedback-error";
+    } else {
+        feedback.textContent = "☹️ No correct answers. Have another go!";
+        feedback.className = "feedback-box feedback-error";
+    }
+    // Disable further changes after answering
+    document.querySelectorAll('#goldQuizForm input').forEach(i => i.disabled = true);
+}
+</script>
 
         <!-- Bibliography -->
         <div class="bibliography" style="margin-top:32px;">
