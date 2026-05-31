@@ -150,72 +150,184 @@
         <!-- Quiz (engagement element, minimal as not text-focused per instructions) -->
         <div class="quiz-section">
     <div class="quiz-title">Quick Quiz: Chinese on the Goldfields</div>
+
     <form id="goldQuizForm">
+
         <div class="quiz-question">
             <p>1. What were two major push factors driving migration from China?</p>
+
             <div class="option-container">
-                <label class="option-label"><input type="checkbox" name="q1" value="famine">Famine</label>
-                <label class="option-label"><input type="checkbox" name="q1" value="poverty">Poverty</label>
-                <label class="option-label"><input type="checkbox" name="q1" value="gold">Gold discoveries in Australia</label>
-                <label class="option-label"><input type="checkbox" name="q1" value="peace">Peaceful conditions in China</label>
+                <label class="option-label">
+                    <input type="checkbox" name="q1" value="famine">
+                    Famine
+                </label>
+
+                <label class="option-label">
+                    <input type="checkbox" name="q1" value="poverty">
+                    Poverty
+                </label>
+
+                <label class="option-label">
+                    <input type="checkbox" name="q1" value="gold">
+                    Gold discoveries in Australia
+                </label>
+
+                <label class="option-label">
+                    <input type="checkbox" name="q1" value="peace">
+                    Peaceful conditions in China
+                </label>
             </div>
         </div>
+
         <div class="quiz-question">
             <p>2. Name one type of work that Chinese migrants took up after the goldrush.</p>
+
             <div class="option-container">
-                <label class="option-label"><input type="radio" name="q2" value="market gardening">Market gardening</label>
-                <label class="option-label"><input type="radio" name="q2" value="shipbuilding">Shipbuilding</label>
-                <label class="option-label"><input type="radio" name="q2" value="railway construction">Railway construction</label>
+                <label class="option-label">
+                    <input type="radio" name="q2" value="market gardening">
+                    Market gardening
+                </label>
+
+                <label class="option-label">
+                    <input type="radio" name="q2" value="shipbuilding">
+                    Shipbuilding
+                </label>
+
+                <label class="option-label">
+                    <input type="radio" name="q2" value="railway construction">
+                    Railway construction
+                </label>
             </div>
         </div>
+
         <div class="quiz-question">
             <p>3. What happened at Lambing Flat in 1861?</p>
+
             <div class="option-container">
-                <label class="option-label"><input type="radio" name="q3" value="riot">Racist violence against Chinese miners</label>
-                <label class="option-label"><input type="radio" name="q3" value="discovery">Major gold discovery</label>
-                <label class="option-label"><input type="radio" name="q3" value="law">Anti-discrimination law passed</label>
+                <label class="option-label">
+                    <input type="radio" name="q3" value="riot">
+                    Racist violence against Chinese miners
+                </label>
+
+                <label class="option-label">
+                    <input type="radio" name="q3" value="discovery">
+                    Major gold discovery
+                </label>
+
+                <label class="option-label">
+                    <input type="radio" name="q3" value="law">
+                    Anti-discrimination law passed
+                </label>
             </div>
         </div>
-        <button type="button" class="action-btn" onclick="scoreGoldQuiz()">Check Answers</button>
+
+        <button type="button" class="action-btn" onclick="scoreGoldQuiz()">
+            Check Answers
+        </button>
+
+        <button
+            type="button"
+            id="resetQuizBtn"
+            class="action-btn"
+            onclick="resetGoldQuiz()"
+            style="display:none;"
+        >
+            Try Again
+        </button>
+
     </form>
+
     <div id="goldQuizFeedback" class="feedback-box"></div>
 </div>
 
 <script>
 function scoreGoldQuiz() {
-    let score = 0;
-    // Question 1: famine, poverty checked (multiple)
-    const q1Checked = Array.from(document.querySelectorAll('input[name="q1"]:checked')).map(i=>i.value);
-    // Correct: famine & poverty ONLY
-    if (q1Checked.includes('famine') && q1Checked.includes('poverty') && q1Checked.length === 2) score++;
-    // Question 2: Only "market gardening"
-    const q2 = document.querySelector('input[name="q2"]:checked');
-    if (q2 && q2.value === "market gardening") score++;
-    // Question 3: Only "riot"
-    const q3 = document.querySelector('input[name="q3"]:checked');
-    if (q3 && q3.value === "riot") score++;
 
-    let feedback = document.getElementById('goldQuizFeedback');
-    if (!q2 || !q3 || q1Checked.length === 0) {
-        feedback.textContent = "Please answer all questions!";
+    let score = 0;
+
+    const q1Checked = Array.from(
+        document.querySelectorAll('input[name="q1"]:checked')
+    ).map(input => input.value);
+
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    const q3 = document.querySelector('input[name="q3"]:checked');
+
+    // Validation
+    if (q1Checked.length !== 2 || !q2 || !q3) {
+        const feedback = document.getElementById('goldQuizFeedback');
+
+        feedback.textContent =
+            "Please answer all questions. Question 1 requires exactly two answers.";
+
         feedback.className = "feedback-box feedback-error";
+
         return;
     }
+
+    // Question 1
+    if (
+        q1Checked.includes('famine') &&
+        q1Checked.includes('poverty')
+    ) {
+        score++;
+    }
+
+    // Question 2
+    if (q2.value === 'market gardening') {
+        score++;
+    }
+
+    // Question 3
+    if (q3.value === 'riot') {
+        score++;
+    }
+
+    const feedback = document.getElementById('goldQuizFeedback');
+
     if (score === 3) {
-        feedback.textContent = "🏆 Excellent! You got all correct!";
+        feedback.innerHTML =
+            "🏆 <strong>Excellent!</strong> You got all 3 correct!";
         feedback.className = "feedback-box feedback-success";
-    } else if (score === 2) {
-        feedback.textContent = "👍 Good! You got 2 out of 3 correct.";
+    }
+    else if (score === 2) {
+        feedback.innerHTML =
+            "👍 <strong>Good work!</strong> You got 2 out of 3 correct.";
         feedback.className = "feedback-box feedback-success";
-    } else if (score === 1) {
-        feedback.textContent = "🙂 You got 1 out of 3. Try again!";
-        feedback.className = "feedback-box feedback-error";
-    } else {
-        feedback.textContent = "☹️ No correct answers. Have another go!";
+    }
+    else if (score === 1) {
+        feedback.innerHTML =
+            "🙂 You got 1 out of 3 correct. Try again!";
         feedback.className = "feedback-box feedback-error";
     }
-    // Disable further changes after answering
-    document.querySelectorAll('#goldQuizForm input').forEach(i => i.disabled = true);
+    else {
+        feedback.innerHTML =
+            "☹️ No correct answers. Have another go!";
+        feedback.className = "feedback-box feedback-error";
+    }
+
+    // Disable inputs after grading
+    document.querySelectorAll('#goldQuizForm input').forEach(input => {
+        input.disabled = true;
+    });
+
+    // Show reset button
+    document.getElementById('resetQuizBtn').style.display = 'inline-block';
+}
+
+function resetGoldQuiz() {
+
+    document.getElementById('goldQuizForm').reset();
+
+    document.querySelectorAll('#goldQuizForm input').forEach(input => {
+        input.disabled = false;
+    });
+
+    const feedback = document.getElementById('goldQuizFeedback');
+
+    feedback.textContent = '';
+    feedback.className = 'feedback-box';
+
+    document.getElementById('resetQuizBtn').style.display = 'none';
 }
 </script>
 
