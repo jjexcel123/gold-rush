@@ -52,6 +52,30 @@
             padding: 19px 18px;
         }
         .quiz-title { color: #e3bd69; font-weight: bold; margin-bottom: 9px; }
+        .action-btn {
+            display: inline-block;
+            margin: 22px 10px 22px 0;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #c8973a, #e3bd69);
+            color: #1c1c22;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 3px 12px #e3bd6944;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+            letter-spacing: 0.5px;
+        }
+        .action-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 22px #e3bd6966;
+            background: linear-gradient(135deg, #d9a840, #f0cc7a);
+        }
+        .action-btn:active {
+            transform: scale(1.03);
+        }
         @media (max-width:600px) {
             .container { padding: 5vw 2vw; }
         }
@@ -143,7 +167,7 @@
             </blockquote>
         </div>
 
-        <!-- Quiz (engagement element, minimal as not text-focused per instructions) -->
+        <!-- Quiz -->
         <div class="quiz-section">
     <div class="quiz-title">Quick Quiz: Chinese on the Goldfields</div>
 
@@ -253,32 +277,21 @@ function scoreGoldQuiz() {
     const q2 = document.querySelector('input[name="q2"]:checked');
     const q3 = document.querySelector('input[name="q3"]:checked');
 
-    // Validation
     if (q1Checked.length !== 2 || !q2 || !q3) {
         const feedback = document.getElementById('goldQuizFeedback');
-
-        feedback.textContent =
-            "Please answer all questions. Question 1 requires exactly two answers.";
-
+        feedback.textContent = "Please answer all questions. Question 1 requires exactly two answers.";
         feedback.className = "feedback-box feedback-error";
-
         return;
     }
 
-    // Question 1
-    if (
-        q1Checked.includes('famine') &&
-        q1Checked.includes('poverty')
-    ) {
+    if (q1Checked.includes('famine') && q1Checked.includes('poverty')) {
         score++;
     }
 
-    // Question 2
     if (q2.value === 'market gardening') {
         score++;
     }
 
-    // Question 3
     if (q3.value === 'riot') {
         score++;
     }
@@ -286,32 +299,23 @@ function scoreGoldQuiz() {
     const feedback = document.getElementById('goldQuizFeedback');
 
     if (score === 3) {
-        feedback.innerHTML =
-            "🏆 <strong>Excellent!</strong> You got all 3 correct!";
+        feedback.innerHTML = "🏆 <strong>Excellent!</strong> You got all 3 correct!";
         feedback.className = "feedback-box feedback-success";
-    }
-    else if (score === 2) {
-        feedback.innerHTML =
-            "👍 <strong>Good work!</strong> You got 2 out of 3 correct.";
+    } else if (score === 2) {
+        feedback.innerHTML = "👍 <strong>Good work!</strong> You got 2 out of 3 correct.";
         feedback.className = "feedback-box feedback-success";
-    }
-    else if (score === 1) {
-        feedback.innerHTML =
-            "🙂 You got 1 out of 3 correct. Try again!";
+    } else if (score === 1) {
+        feedback.innerHTML = "🙂 You got 1 out of 3 correct. Try again!";
         feedback.className = "feedback-box feedback-error";
-    }
-    else {
-        feedback.innerHTML =
-            "☹️ No correct answers. Have another go!";
+    } else {
+        feedback.innerHTML = "☹️ No correct answers. Have another go!";
         feedback.className = "feedback-box feedback-error";
     }
 
-    // Disable inputs after grading
     document.querySelectorAll('#goldQuizForm input').forEach(input => {
         input.disabled = true;
     });
 
-    // Show reset button
     document.getElementById('resetQuizBtn').style.display = 'inline-block';
 }
 
@@ -324,7 +328,6 @@ function resetGoldQuiz() {
     });
 
     const feedback = document.getElementById('goldQuizFeedback');
-
     feedback.textContent = '';
     feedback.className = 'feedback-box';
 
