@@ -14,6 +14,12 @@
             margin-bottom: 42px;
             box-shadow: 0 4px 22px #23232a44;
             padding: 28px 24px 23px 32px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: default;
+        }
+        .quote-panel:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 36px #23232a88;
         }
         .panel-header, .attribution { color: #e3bd69; font-family: 'EB Garamond', serif; letter-spacing: 1px;}
         .panel-header { font-size: 1.3rem; border-bottom: 1px solid #e3bd6944; margin-bottom: 13px; padding-bottom: 3px;}
@@ -56,7 +62,7 @@
         <h1>
             Chinese Migration on the Australian Goldfields<br>
             <span style="font-size:1.2rem; color:#ded2ad; display: block; margin-top:8px;">
-                <em></em>
+                <em>This page contains information adapted and summarised from Museums of History NSW, 'Chinese on the Goldfields'.</em>
             </span>
         </h1>
 
@@ -153,8 +159,8 @@
                 </label>
 
                 <label class="option-label">
-                    <input type="checkbox" name="q1" value="peace">
-                    Peaceful conditions in China
+                    <input type="checkbox" name="q1" value="poverty">
+                    Poverty
                 </label>
 
                 <label class="option-label">
@@ -163,8 +169,8 @@
                 </label>
 
                 <label class="option-label">
-                    <input type="checkbox" name="q1" value="poverty">
-                    Poverty
+                    <input type="checkbox" name="q1" value="peace">
+                    Peaceful conditions in China
                 </label>
             </div>
         </div>
@@ -174,13 +180,13 @@
 
             <div class="option-container">
                 <label class="option-label">
-                    <input type="radio" name="q2" value="shipbuilding">
-                    Shipbuilding
+                    <input type="radio" name="q2" value="market gardening">
+                    Market gardening
                 </label>
 
                 <label class="option-label">
-                    <input type="radio" name="q2" value="market gardening">
-                    Market gardening
+                    <input type="radio" name="q2" value="shipbuilding">
+                    Shipbuilding
                 </label>
 
                 <label class="option-label">
@@ -195,16 +201,18 @@
 
             <div class="option-container">
                 <label class="option-label">
+                    <input type="radio" name="q3" value="riot">
+                    Racist violence against Chinese miners
+                </label>
+
+                <label class="option-label">
                     <input type="radio" name="q3" value="discovery">
                     Major gold discovery
                 </label>
+
                 <label class="option-label">
                     <input type="radio" name="q3" value="law">
                     Anti-discrimination law passed
-                </label>
-                <label class="option-label">
-                    <input type="radio" name="q3" value="riot">
-                    Racist violence against Chinese miners
                 </label>
             </div>
         </div>
