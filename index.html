@@ -81,6 +81,33 @@
         }
     </style>
 </head>
+
+<!-- Audio Player Interface -->
+<div class="quote-panel" style="text-align: center;">
+    <div class="panel-header">Exhibition Audio Guide</div>
+    <input type="file" id="audioUpload" accept="audio/mp3" class="action-btn" style="background: #17171b; color: #eee; border: 1.5px solid #e3bd69; font-size: 0.9rem; padding: 10px;">
+    <br>
+    <audio id="audioPlayer" controls style="margin-top: 15px; width: 100%; max-width: 400px; display: none;"></audio>
+</div>
+
+<!-- JavaScript to Handle the Upload and Playback -->
+<script>
+    const audioUpload = document.getElementById('audioUpload');
+    const audioPlayer = document.getElementById('audioPlayer');
+
+    audioUpload.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            // Create a temporary local URL for the uploaded MP3 file
+            const fileURL = URL.createObjectURL(file);
+            audioPlayer.src = fileURL;
+            audioPlayer.style.display = 'inline-block'; // Show the player
+            audioPlayer.play(); // Auto-play the audio
+        }
+    });
+</script>
+    
+    
 <body>
     <div class="container">
         <h1>
@@ -90,8 +117,19 @@
             </span>
         </h1>
 
-        
+        <!-- Embedded Audio Guide Player -->
+        <div class="quote-panel" style="text-align: center;">
+            <div class="panel-header">Listen to the Audio Guide</div>
+            <audio controls style="margin-top: 15px; width: 100%; max-width: 500px;">
+                <!-- REPLACE THE LINK BELOW WITH YOUR UPLOADED MP3 URL -->
+                <source src="music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 
+
+        
+        
         <!-- Introduction -->
         <div class="quote-panel">
             <div class="panel-header">Introduction</div>
